@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS justask_db;
+
+CREATE DATABASE justask_db;
