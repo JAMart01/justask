@@ -3,7 +3,7 @@ INSERT INTO justask_db.user (username, email, password)
 VALUES 
 ('justask', 'test123@gmail.com', 'password'),
 ('jorge', 'jorge@jorge.com', 'password1234'),
-('daniel', 'daniel@daniel.com' 'password4321');
+('daniel', 'daniel@daniel.com','password4321');
 
 INSERT INTO justask_db.post (title, user_id)
 
