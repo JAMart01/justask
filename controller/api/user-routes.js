@@ -49,6 +49,9 @@ router.post('/', (req,res) => {
       });
 });
 
+router.post('/login', (req, res) => {
+    
+})
 
 // Update a User by id
 router.put('/:id', (req, res) => {
