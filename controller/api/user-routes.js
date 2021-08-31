@@ -50,8 +50,23 @@ router.post('/', (req,res) => {
 });
 
 router.post('/login', (req, res) => {
-    
-})
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    }).then(dbUser => {
+        if (!dbUser) {
+            res.status(404).json({ message: 'No user found......' });
+            return;
+        } else {
+            res.json(dbUser);
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
 
 // Update a User by id
 router.put('/:id', (req, res) => {
