@@ -52,21 +52,30 @@ router.post('/', (req,res) => {
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            username: req.body.username
+          username: req.body.username
         }
-    }).then(dbUser => {
-        if (!dbUser) {
-            res.status(404).json({ message: 'No user found......' });
-            return;
-        } else {
-            res.json(dbUser);
+      }).then(dbUserData => {
+        if (!dbUserData) {
+          res.status(400).json({ message: 'No user with that username!' });
+          return;
         }
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
-});
+    
+        const validPassword = dbUserData.checkPassword(req.body.password);
+    
+        if (!validPassword) {
+          res.status(400).json({ message: 'Incorrect password!' });
+          return;
+        }
+    
+        req.session.save(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+          req.session.loggedIn = true;
+      
+          res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
+      });
+})
 
 // Update a User by id
 router.put('/:id', (req, res) => {
