@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const session = require(`express-session`);
 
 const userRoutes = require('./user-routes');
 const postRoutes = require('./post-routes');
