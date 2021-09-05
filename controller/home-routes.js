@@ -13,7 +13,31 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard2');
+  Post.findAll({
+      include: [
+          {model: Comment, 
+          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+          include: {
+              model: User,
+              attributes: ['username']
+          }
+      },
+      {
+          model: User, 
+          attributes: ['username']
+      }
+      ]
+  })
+    .then(dbPost => {
+        const posts = dbPost.map(post => post.get({ plain: true}));
+        res.render('dashboard2', {
+            posts, 
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });     
 });
 
 router.get('/post/:id', (req, res) => {
