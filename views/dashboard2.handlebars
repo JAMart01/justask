@@ -1,4 +1,4 @@
-{{!-- <link rel="stylesheet" href='/css/main.css'> --}}
+<link rel="stylesheet" href='/css/main.css'>
 
 {{!-- Container for navbar --}}
 <div class="container-fluid">
@@ -11,18 +11,27 @@
 {{!-- Container for posts and user to create new post  --}}
 
     <main class="row">
-            
-        {{!-- Container for user to create new post --}}
+
         <div class="container col-3">
+             <div class="" id="form-div" >
             {{> create-post-form}}
-        </div>
+            </div>
+            <div>
+
+            </div>
+        </div>    
+        {{!-- Container for user to create new post --}}
+        {{!-- <div class="container col-3" id="form-div" >
+            {{> create-post-form}}
+        </div> --}}
 
         {{!-- Container for all posts available --}}
-        <div class="container col-9">
-            <ol class="post-list" style="list-style: none;">
+        <div class="container col-9" id="posts-div">
+            <h1 id="post-div-header"> Posts</h1>
+            <ol class="post-list" id="posts-list">
 
             {{#each posts as |post|}}
-            <li>
+            <li class="single-post">
                 {{> post-info post}}
             </li>
             {{/each}}
@@ -33,5 +42,6 @@
     </main>
 
     <script src="/javascript/logout.js"></script>
+
 </div>
 
