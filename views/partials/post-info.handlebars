@@ -1,0 +1,28 @@
+<div class="be-comment">
+    <div class="be-img-comment">
+        <a href="#">
+            <img id={{user.username}} alt="" class="be-ava-comment">
+        </a>
+    </div>
+    <div class="be-comment-content">
+
+        <span class="be-comment-name">
+            <a href="#">{{user.username}}</a>
+        </span>
+
+        <p class="be-comment-text">
+            {{title}}
+        </p>
+    </div>
+</div>
+<script type="text/javascript">
+    async function fetchImage() {
+        let image = await fetch('https://ui-avatars.com/api/?name={{user.username}}')
+            .then(response => response.blob())
+            .then(data => {
+                return URL.createObjectURL(data);
+            });
+        document.getElementById("{{user.username}}").src = image;
+    }
+    fetchImage();
+</script>

@@ -1,37 +1,39 @@
 <link rel="stylesheet" href="/css/dashboard.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<header>
+<button  class="flex-sm-fill text-sm-center nav-link" id="logout" style="position:fixed;
+   right:10px;
+   top:5px;"><i class="fa fa-sign-out" aria-hidden="true"></i>
+Logout</button>
+</header>
 <div class="container">
-  <button  class="flex-sm-fill text-sm-center nav-link" id="logout" class="btn-no-style">Logout</button>
-  </a>
-</div>
-
-<div class="row">
-  <div class="left" style="background-color:#bbb;">
-    <h2>Menu</h2>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-    <ul id="myMenu">
-      <li><a href="#">Tech</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-      <li><a href="#">PHP</a></li>
-      <li><a href="#">Python</a></li>
-      <li><a href="#">jQuery</a></li>
-      <li><a href="#">SQL</a></li>
-      <li><a href="#">Bootstrap</a></li>
-      <li><a href="#">Node.js</a></li>
-    </ul>
+  <div class="row">
+    <div class="left" style="background-color:#bbb;">
+      <h2>Menu</h2>
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+      <ul id="myMenu">
+        <li><a href="#">Tech</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">PHP</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">jQuery</a></li>
+        <li><a href="#">SQL</a></li>
+        <li><a href="#">Bootstrap</a></li>
+        <li><a href="#">Node.js</a></li>
+      </ul>
+    </div>
+  
+    <div class="right" style="background-color:#ddd;">
+      <div class="be-comment-block">
+         {{#each posts as |post|}}
+          {{> post-info post }}
+        {{/each}}
+      </div>
+      
+    </div>
   </div>
   
-  <div class="right" style="background-color:#ddd;">
-    <h2>Page Content</h2>
-    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some text..</p>
-  </div>
 </div>
-
-</div>
-
-
 
 <script src="/javascript/logout.js"></script>
