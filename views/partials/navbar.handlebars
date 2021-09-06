@@ -1,16 +1,16 @@
 <div class="col-12" style="background-color: rebeccapurple;">
     <nav class="navbar navbar-light bg-light row">
-        <a class="navbar-brand col-1" id="navbar-title" href="/">Just Ask</a>
+        <a class="navbar-brand col-1" id="navbar-title" href="/dashboard">Just Ask</a>
         <form class="d-flex col-9">
             <input class="form-control me-2" type="search" placeholder="Search for Posts based on Category" aria-label="Search" style="text-align: center;">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
         </form>
         <ul class="navbar-nav">
             {{!-- <li class="nav-item active">
                 <a class="nav-link" href="/dashboard">Dashboard</a>
             </li> --}}
             <li class="nav-item active col-2">
-                <a class="nav-link" href="/logout">Logout</a>
+                <a id="logout" class="nav-link" href="/logout">Logout</a>
             </li>
         </ul>  
     </nav>
