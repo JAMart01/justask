@@ -48,6 +48,7 @@ router.get('/:id', (req, res) => {
       .then(dbComment => {
           if (!dbComment) {
               res.status(404).json({ message: 'No comment found with this id'});
+              return;
           } else {
               res.json(dbComment);
           }
@@ -84,6 +85,7 @@ router.delete('/:id', (req, res) => {
     .then(dbComment => {
         if (!dbComment) {
             res.status(404).json({message: 'No comment found with this id'});
+            return;
         } else {
             res.json(dbComment);
         }

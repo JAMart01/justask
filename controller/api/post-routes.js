@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment, Category } = require('../../models');
 
 
 
@@ -18,6 +18,10 @@ router.get('/', (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Category,
+                attributes: ['id', 'name']
             }
         ]
     })
@@ -69,7 +73,8 @@ router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
         post_text: req.body.post_text,
-        user_id: req.body.user_id
+        user_id: req.session.user_id,
+        category_id: req.body.category_id
     })
       .then(dbPost => res.json(dbPost))
       .catch(err => {
