@@ -1,6 +1,11 @@
 <article class="post">
 
     <div class="title">
+        <div class="be-img-comment">
+            <a href="#">
+                <img id={{user.username}} alt="" class="be-ava-comment">
+            </a>
+        </div>
         <h4> {{{title}}}</h4>
     </div>
   
@@ -9,28 +14,12 @@
     </div>
   
     <div class="meta">
-        <a href="api/post/{{id}}">{{comments.length}} Comment(s)</a>
+        create at {{format_date createdAt}} by {{user.username}}
+        <a href="/post/{{id}}">{{comments.length}} Comment(s)</a>
     </div>
   
 </article>
 
-<div class="be-comment">
-    <div class="be-img-comment">
-        <a href="#">
-            <img id={{user.username}} alt="" class="be-ava-comment">
-        </a>
-    </div>
-    <div class="be-comment-content">
-
-        <span class="be-comment-name">
-            <a href="#">{{user.username}}</a>
-        </span>
-
-        <p class="be-comment-text">
-            {{title}}
-        </p>
-    </div>
-</div>
 <script type="text/javascript">
     async function fetchImage() {
         let image = await fetch('https://ui-avatars.com/api/?name={{user.username}}')
