@@ -1,29 +1,29 @@
-# justAsk
+# Just Ask
 
 ## Description
-
-  This is the group project 2
+This site is a blog site that allows users to interact with each other making posts about certain topics that pertain to our lives directly on the daily basis. If you are uncertain about tech industry, lifestyle, etc. All you have to do is Just Ask!
   
-  ## Table of Contents
-  
-  
-  * [Installation](#installation)
-  * [Usage](#usage)
-  
-  
-  ## Installation
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
 
-  - Please navigate to project folder and open Terminal/Gitbash, run npm install to retrieve the necessary libraries, and Run the following node server.js locally
+## Deployed Site
+https://justaskproject2.herokuapp.com/
 
-  ## Technology
+## Technology
+- Bootstrap
+- CSS
+- Node.js
+- Express
+- Handlebars
+- Sequelize
+- MySQL
 
-  - HTML, CSS, JavaScript, MySql
+## Contributors
 
-  ## Contributors
-
-    * Jorge Martinez (Back End, Front End)
-    * Daniel Carazo (Back End, Front End)
-    * Jeevan Thapa (Front End )
-    * Hikmet Dogrul (Back End & Front End)
+  * Jorge Martinez (Back End, Front End)
+  * Daniel Carazo (Back End, Front End)
+  * Jeevan Thapa (Front End )
+  * Hikmet Dogrul (Back End & Front End)
 
 
