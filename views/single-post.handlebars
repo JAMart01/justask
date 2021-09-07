@@ -21,14 +21,25 @@
                 </div>
                 <div class="bg-white">
                     <div class="d-flex flex-row fs-12">
-                        <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
+                        {{!-- <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
                         <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
-                        <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
+                        <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div> --}}
+
+                    <button id="like" onclick="liked()">
+                        <i class="fa fa-thumbs-up"></i>
+                        <span class="icon">Like</span>
+                    </button>
+
+                    <button id="dislike" onclick="dislike()">
+                        <i class="fa fa-thumbs-down"></i>
+                        <span class="icon">Dislike</span>
+                    </button>
                     </div>
                 </div>
-                <div class="bg-light p-2">
+
+            <div class="bg-light p-2">
             {{> comments post.comments}}
-        </div>
+            </div>
                 <div class="bg-light p-2">
                     <div class="d-flex flex-row align-items-start"><textarea id="commentBox" class="form-control ml-1 shadow-none textarea"></textarea></div>
                     <div class="mt-2 text-right"><button class="btn btn-secondary btn-sm shadow-none" type="button" id="postCommentBtn">Post comment</button><button class="btn btn-outline-secondary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
@@ -50,3 +61,4 @@
     fetchImage();
 </script>
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/like.js"></script>
