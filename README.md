@@ -24,6 +24,7 @@ https://justaskproject2.herokuapp.com/
 - Handlebars
 - Sequelize
 - MySQL
+- -Nodemon
 
 ## Contributors
 
