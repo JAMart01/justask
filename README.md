@@ -14,7 +14,7 @@ This site is a blog site that allows users to interact with each other making po
 
 
 ## Deployed Site
-https://justaskproject2.herokuapp.com/
+https://just-ask1.herokuapp.com/
 
 ## Technology
 - Bootstrap
